@@ -6,6 +6,11 @@
 </head>
 <body>
 <nav th:replace="layout::menu"></nav>
-<h1 th:text="${session.nomusuario}"></h1>
+<hr/>
+<hr/>
+<div class="alert alert-warning text-center" role="alert">
+    Bienvenido :
+<h1 th:text="${session.nomusuario}" style="padding: 10px;"></h1>
+</div>
 </body>
 </html>

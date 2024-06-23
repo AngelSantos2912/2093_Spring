@@ -9,7 +9,7 @@
             type="text/javascript"></script>
 </head>
 <body>
-<div class="card position-absolute top-50 start-50 translate-middle border border-5 border border-danger rounded-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 500px; height: 400px">
+<div class="card position-absolute top-50 start-50 translate-middle border border-5 border border-warning rounded-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width: 500px; height: 400px">
     <div class="card-header text-center">
         INICIAR SESION
     </div>
@@ -30,16 +30,18 @@
 
 
             <hr />
-            <div th:action="alert" class="alert alert-warning text-center" role="alert">
-                Datos incorrectos, acceso denegado
-            </div>
+           <div th:if="${param.error != null}">
+               <div class="alert alert-warning text-center" role="alert">
+                   Datos incorrectos, acceso denegado
+               </div>
+           </div>
         </form>
     </div>
 </div>
 </body>
 <style>
     body{
-        background: #ffa9ad;
+        background: #fff8b2;
     }
 </style>
 

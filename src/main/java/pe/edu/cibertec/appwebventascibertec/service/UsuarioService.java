@@ -22,12 +22,13 @@ public class UsuarioService implements IUsuarioService {
     public Usuario obtenerUsuarioxNomUsuario(String nomusuario) {
         return usuarioRepository.findByNomusuario(nomusuario);
     }
+
     @Override
     public Usuario guardarUsuario(Usuario usuario) {
         usuario.setPassword(bCryptPasswordEncoder
                 .encode("123456"));
         usuario.setActivo(true);
-        Rol usuarioRol = rolRepository.findByNomrol("ADMIN");
+        Rol usuarioRol = rolRepository.findByNomrol("admin");
         usuario.setRoles(new HashSet<>(Arrays.asList(usuarioRol)));
         return usuarioRepository.save(usuario);
     }
