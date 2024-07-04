@@ -19,7 +19,7 @@ class AppwebventascibertecApplicationTests {
 		usuario.setEmail("angel@gmail.com");
 		usuario.setNombres("Angelito");
 		usuario.setApellidos("Santito");
-usuarioService.guardarUsuario(usuario);
+		usuarioService.guardarUsuario(usuario);
 
 	}
 

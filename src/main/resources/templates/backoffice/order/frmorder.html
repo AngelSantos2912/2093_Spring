@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="layout::menu"></nav>
+<hr/>
+<hr/>
+<hr/>
+
+<div class="container">
+    <button class="btn btn-primary btnnuevo">Nuevo</button>
+    <table class="table table-bordered" id="tborders">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Fecha envio</th>
+            <th>Barco Nombre</th>
+            <th>Barco Direccion</th>
+            <th>Cuidad</th>
+            <th>Accion</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="l:${ordenes}">
+            <td th:text="${l.orderid}"></td>
+            <td th:text="${l.shippeddate}"></td>
+            <td th:text="${l.shipname}"></td>
+            <td th:text="${l.shipaddress}"></td>
+            <td th:text="${l.shipcity}"></td>
+            <td>
+                <button class="btn btn-warning btnactualizar"
+                        th:data-orderid="${l.orderid}">Modificar</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+</body>
+</html>

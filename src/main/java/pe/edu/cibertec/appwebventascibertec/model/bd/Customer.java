@@ -1,42 +1,32 @@
 package pe.edu.cibertec.appwebventascibertec.model.bd;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Data
 @Table(name = "customers")
-
 public class Customer {
-
     @Id
-    private String customerId;
-    @Column(name = "CompanyName")
-    private String companyName;
-    @Column(name ="ContactName")
-    private String contactName;
-    @Column(name = "ContactTitle")
-    private String contactTitle;
-    @Column(name = "Address")
+    private String customerid;
+    private String companyname;
+    private String contactname;
+    private String contacttitle;
     private String address;
-    @Column(name = "City")
     private String city;
-    @Column(name = "Region")
     private String region;
-    @Column(name = "PostalCode")
-    private String postalCode;
-    @Column(name = "Country")
+    private String postalcode;
     private String country;
-    @Column(name = "Phone")
     private String phone;
-    @Column(name = "Fax")
     private String fax;
 
-
+    @OneToMany(mappedBy = "customer")
+    private List<Order> orders;
 }

@@ -19,6 +19,7 @@ $(document).on("click", ".btnactualizar", function(){
         url: "/seguridad/usuario/"+$(this).attr("data-idusuario"),
         dataType: "json",
         success: function(resultado){
+            $("#hddidusuario").val(resultado.idusuario);
             $("#txtnombre").val(resultado.nombres);
             $("#txtapellido").val(resultado.apellidos);
             $("#txtemail").val(resultado.email);
@@ -51,7 +52,7 @@ $(document).on("click", "#btnguardar", function(){
         }),
         success: function(resultado){
             if(resultado.resultado)
-                listarUsuario;
+                listarUsuario();
             alert(resultado.mensaje);
 
         }
