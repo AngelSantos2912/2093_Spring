@@ -2,18 +2,22 @@
 <html lang="en">
 <head th:replace="layout::head">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ordenes</title>
 </head>
 <body>
 <nav th:replace="layout::menu"></nav>
 <hr/>
 <hr/>
 <hr/>
-
+<div class="card">
+    <div class="alert alert-warning text-center">
+        <h1 style="text-align: center">Listado de Ordenes</h1>
+    </div>
 <div class="container">
-    <button class="btn btn-primary btnnuevo">Nuevo</button>
-    <table class="table table-bordered" id="tborders">
-        <thead>
+    <button class="btn btn-outline-primary btnnuevo">Nuevo</button>
+    <hr/>
+    <table class="table table-bordered striped" id="tborders">
+        <thead class="table-dark">
         <tr>
             <th>Id</th>
             <th>Fecha envio</th>
