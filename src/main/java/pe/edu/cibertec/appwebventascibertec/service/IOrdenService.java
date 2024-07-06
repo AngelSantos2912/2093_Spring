@@ -5,7 +5,9 @@ import pe.edu.cibertec.appwebventascibertec.model.bd.Order;
 import java.util.List;
 
 public interface IOrdenService {
-    List<Order> obtenerOrders();
+    
     void guardarOrden(Order order);
-    Order buscarOrden(int id);
+    List<Order> listOrders();
+
+    Object obtenerOrders();
 }
